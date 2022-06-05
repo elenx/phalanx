@@ -1,12 +1,13 @@
 package main
 
 import (
-	"fmt"
-	"phalanx/source"
+	"log"
+	"phalanx/cmd"
 )
 
 func main() {
-	a := "-- Start --"
-	fmt.Printf("%v\n", a)
-	source.Start()
+	err := cmd.Execute()
+	if err != nil {
+		log.Fatalf("cmd.Execute err:%s", err)
+	}
 }
